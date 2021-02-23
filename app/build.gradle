@@ -26,6 +26,10 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    testOptions {
+        unitTests.includeAndroidResources = true
+    }
+
     //dataBinding {
     //    enabled = true
     //    enabledForTests = true
@@ -36,6 +40,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
 }
 
 dependencies {
@@ -71,9 +76,9 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha01"
 
     // Annotation processor
-    //kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
     // alternately - if using Java8, use the following instead of lifecycle-compiler
-    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+    //implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
 
     // optional - helpers for implementing LifecycleOwner in a Service
     implementation "androidx.lifecycle:lifecycle-service:$lifecycle_version"
@@ -104,4 +109,12 @@ dependencies {
     implementation "androidx.fragment:fragment-ktx:$fragmentKtxVersion"
 
     testImplementation "org.hamcrest:hamcrest-all:1.3"
+
+    //TODO 3 Add dependencies
+    //AndroidX Test - JVM testing
+    testImplementation "androidx.test:core-ktx:1.3.0"
+    testImplementation "org.robolectric:robolectric:4.5.1"
+    testImplementation "androidx.test.ext:junit-ktx:$androidXTestExtKotlinRunnerVersion"
+
+
 }

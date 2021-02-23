@@ -5,8 +5,6 @@ import org.hamcrest.Matchers
 import org.junit.Assert.*
 import org.junit.Test
 
-//TODO 1 Run tests
-//TODO 4 Run tests again
 class StatisticsUtilsTest {
     @Test
     fun getActiveAndCompletedStats_noCompleted_returnsHundredZero() {

@@ -186,7 +186,6 @@ class TasksViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     private fun filterTasks(tasksResult: Result<List<Task>>): LiveData<List<Task>> {
-        // TODO: This is a good case for liveData builder. Replace when stable.
         val result = MutableLiveData<List<Task>>()
 
         if (tasksResult is Success) {
